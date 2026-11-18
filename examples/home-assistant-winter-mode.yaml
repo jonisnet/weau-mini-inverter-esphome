@@ -1,0 +1,54 @@
+# Home Assistant package: "winter mode" for a pool heat pump that is unplugged over winter.
+# - Turn the helper on when you store the pump; dashboards can hide the thermostat.
+# - As soon as the ESP comes back online, winter mode switches off and you get a notification.
+# - If the pump is offline for 2 hours while winter mode is OFF, you get a reminder.
+#
+# Adjust the entity ids (climate / sensor) and the notify service to your setup.
+
+input_boolean:
+  pool_heat_pump_winter_mode:
+    name: Pool heat pump winter mode
+    icon: mdi:snowflake
+
+automation:
+  - id: pool_heat_pump_winter_mode_off_when_back
+    alias: "Pool heat pump: leave winter mode when it comes back online"
+    mode: single
+    triggers:
+      - trigger: state
+        entity_id: climate.pool_heat_pump_heat_pump
+        from: "unavailable"
+        for: { minutes: 1 }
+    conditions:
+      - condition: state
+        entity_id: input_boolean.pool_heat_pump_winter_mode
+        state: "on"
+      - condition: template
+        value_template: "{{ states('climate.pool_heat_pump_heat_pump') not in ['unavailable', 'unknown'] }}"
+    actions:
+      - action: input_boolean.turn_off
+        target: { entity_id: input_boolean.pool_heat_pump_winter_mode }
+      - action: notify.notify
+        data:
+          title: Pool heat pump is back
+          message: >-
+            The pool heat pump is online again, winter mode switched off
+            (water {{ states('sensor.pool_heat_pump_water_temperature') | float(0) | round(1) }} °C).
+
+  - id: pool_heat_pump_offline_without_winter_mode
+    alias: "Pool heat pump: offline while winter mode is off"
+    mode: single
+    triggers:
+      - trigger: state
+        entity_id: climate.pool_heat_pump_heat_pump
+        to: "unavailable"
+        for: { hours: 2 }
+    conditions:
+      - condition: state
+        entity_id: input_boolean.pool_heat_pump_winter_mode
+        state: "off"
+    actions:
+      - action: notify.notify
+        data:
+          title: Pool heat pump offline
+          message: The pool heat pump has been offline for 2 hours. Forgot to enable winter mode?

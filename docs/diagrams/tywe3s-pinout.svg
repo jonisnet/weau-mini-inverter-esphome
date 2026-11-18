@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 490" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="900" height="490" fill="#f8fafc"/>
+  <text x="450" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#111827">TYWE3S pinout — as mounted on CC1150B (antenna to the right)</text>
+  <!-- module body -->
+  <rect x="200" y="120" width="420" height="230" rx="8" fill="#d1d5db" stroke="#6b7280" stroke-width="2"/>
+  <rect x="620" y="120" width="70" height="230" fill="#1e3a8a"/>
+  <text x="655" y="240" text-anchor="middle" font-size="14" fill="#fff" transform="rotate(90 655 240)">PCB antenna</text>
+  <text x="410" y="230" text-anchor="middle" font-size="24" font-weight="700" fill="#111827">TYWE3S</text>
+  <text x="410" y="256" text-anchor="middle" font-size="14" fill="#374151">ESP8266 · 3.3 V</text>
+  <!-- top row: left→right VCC, GPIO13, GPIO12, GPIO14, GPIO16, EN, ADC, RST -->
+  <g font-size="13" font-weight="700" text-anchor="middle">
+    <g fill="#f59e0b">
+      <rect x="215" y="100" width="22" height="22" fill="#7c3aed"/><rect x="265" y="100" width="22" height="22"/><rect x="315" y="100" width="22" height="22"/><rect x="365" y="100" width="22" height="22"/>
+      <rect x="415" y="100" width="22" height="22"/><rect x="465" y="100" width="22" height="22"/><rect x="515" y="100" width="22" height="22"/><rect x="565" y="100" width="22" height="22"/>
+    </g>
+    <text x="226" y="90" fill="#7c3aed">VCC</text><text x="276" y="90" fill="#374151">IO13</text><text x="326" y="90" fill="#374151">IO12</text><text x="376" y="90" fill="#374151">IO14</text>
+    <text x="426" y="90" fill="#374151">IO16</text><text x="476" y="90" fill="#374151">EN</text><text x="526" y="90" fill="#374151">ADC</text><text x="576" y="90" fill="#374151">RST</text>
+  </g>
+  <!-- bottom row: left→right GND, GPIO15, GPIO2, GPIO0, GPIO4, GPIO5, RXD, TXD -->
+  <g font-size="13" font-weight="700" text-anchor="middle">
+    <rect x="215" y="348" width="22" height="22" fill="#2563eb"/><rect x="265" y="348" width="22" height="22" fill="#f59e0b"/><rect x="315" y="348" width="22" height="22" fill="#f59e0b"/>
+    <rect x="365" y="348" width="22" height="22" fill="#dc2626"/><rect x="415" y="348" width="22" height="22" fill="#f59e0b"/><rect x="465" y="348" width="22" height="22" fill="#f59e0b"/>
+    <rect x="515" y="348" width="22" height="22" fill="#16a34a"/><rect x="565" y="348" width="22" height="22" fill="#eab308"/>
+    <text x="226" y="392" fill="#2563eb">GND</text><text x="276" y="392" fill="#374151">IO15</text><text x="326" y="392" fill="#374151">IO2</text>
+    <text x="376" y="392" fill="#dc2626">GPIO0</text><text x="426" y="392" fill="#374151">IO4</text><text x="476" y="392" fill="#374151">IO5</text>
+    <text x="526" y="392" fill="#16a34a">RXD</text><text x="576" y="392" fill="#a16207">TXD</text>
+  </g>
+  <g font-size="13" fill="#374151">
+    <text x="60" y="430">• <tspan font-weight="700" fill="#dc2626">GPIO0</tspan> to GND at power-up = flash (bootloader) mode</text>
+    <text x="60" y="450">• Verify with a multimeter: bottom-left pad must beep against GND of the 5-pin header; top-left (VCC) reads ~3.3 V when powered</text>
+    <text x="60" y="470">• RXD/TXD = GPIO3/GPIO1 (UART0) — used by the Tuya MCU link</text>
+  </g>
+</svg>
