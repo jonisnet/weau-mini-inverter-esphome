@@ -1,5 +1,13 @@
 # W'eau Mini Inverter pool heat pump — local control with ESPHome
 
+[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/jonisnet/weau-mini-inverter-esphome/blob/main/LICENSE)
+[![ESPHome](https://img.shields.io/badge/ESPHome-firmware-000000?style=flat-square&logo=esphome&logoColor=white)](https://esphome.io)
+[![Home Assistant](https://img.shields.io/badge/Home%20Assistant-local%20control-41bdf5?style=flat-square&logo=homeassistant&logoColor=white)](https://www.home-assistant.io)
+[![Last commit](https://img.shields.io/github/last-commit/jonisnet/weau-mini-inverter-esphome?style=flat-square)](https://github.com/jonisnet/weau-mini-inverter-esphome/commits/main)
+[![Stars](https://img.shields.io/github/stars/jonisnet/weau-mini-inverter-esphome?style=flat-square)](https://github.com/jonisnet/weau-mini-inverter-esphome/stargazers)
+[![Sponsor](https://img.shields.io/badge/sponsor-ea4aaa?style=flat-square&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/jonisnet)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/jonisnet)
+
 Cloud-free control of the **W'eau Mini Inverter pool heat pump** (tested on **WMIP-003**, same controller family as WMI-003 / WMI-004) from Home Assistant, by flashing **ESPHome onto the original Tuya Wi-Fi module**. No extra hardware stays in the unit, and no Tuya account or cloud is involved.
 
 <p align="center">
