@@ -11,7 +11,9 @@
 Cloud-free control of the **W'eau Mini Inverter pool heat pump** (tested on **WMIP-003**, same controller family as WMI-003 / WMI-004) from Home Assistant, by flashing **ESPHome onto the original Tuya Wi-Fi module**. No extra hardware stays in the unit, and no Tuya account or cloud is involved.
 
 <p align="center">
-  <img src="docs/images/display-water-temperature.jpg" width="420" alt="Heat pump display showing 17.3 °C">
+  <img src="docs/images/weau-mini-inverter.png" height="300" alt="W'eau Mini Inverter pool heat pump">
+  &nbsp;&nbsp;
+  <img src="docs/images/display-water-temperature.jpg" height="300" alt="Heat pump display showing 17.3 °C">
 </p>
 
 ## What you get in Home Assistant
